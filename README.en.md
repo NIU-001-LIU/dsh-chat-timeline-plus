@@ -15,7 +15,8 @@ A message timeline for DeepSeek Harness (DSH): persistent right rail + hover pan
 
 Rest the pointer on an entry for ~0.35s and a card appears to the left showing **both the question and that turn's reply digest** — locate a turn without jumping to it:
 
-- Top: the full question (truncated)
+- Header: the turn's full timestamp (e.g. `2026-08-25 14:32`)
+- Top: the full question (fixed-width card, truncated)
 - Bottom: the reply's text digest (reasoning and tool calls skipped)
 - Light/dark themes; auto-dismisses on pointer-out
 
@@ -26,6 +27,10 @@ The pin at the panel's top-left: click to **pin** — the panel stays open when 
 ### Bookmarks
 
 Star messages to mark key turns; marked entries get gold indicator lines when collapsed, and a "marks only (n)" filter.
+
+### Day grouping
+
+Entries crossing day boundaries get a date separator row (**Today / Yesterday / YYYY-MM-DD**) — the shape of a long session at a glance.
 
 ### More
 
