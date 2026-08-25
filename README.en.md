@@ -36,11 +36,71 @@ Star messages to mark key turns; marked entries get gold indicator lines when co
 
 ## Install
 
+### Option 1: dsh CLI (recommended)
+
 ```bash
+# current profile (usually web)
 dsh plugin add dsh-chat-timeline-plus
+
+# or target a profile explicitly
+dsh plugin --profile web add dsh-chat-timeline-plus
 ```
 
-Restart `dsh web` and reload the browser. For a source install, clone this repo and run `install.bat` (Windows) or register the plugin manually.
+This pulls from npm, adds the dependency, registers the bundle (cordis.patch.yml) and installs.
+
+### Option 2: npm straight into the profile
+
+For users who manage plugins without the dsh CLI:
+
+```bash
+cd ~/.dsh/profiles/web
+npm install dsh-chat-timeline-plus   # or pnpm add
+```
+
+Then edit `package.json` in that directory and append to `dsh.profile.bundles`:
+
+```jsonc
+{
+  "dsh": {
+    "profile": {
+      "bundles": [ /* …, */ "dsh-chat-timeline-plus" ]
+    }
+  }
+}
+```
+
+### Option 3: from source / local path
+
+```bash
+git clone https://github.com/NIU-001-LIU/dsh-chat-timeline-plus.git
+cd dsh-chat-timeline-plus
+```
+
+- **Windows**: double-click `install.bat` (copies into the profile and registers)
+- **Manual**: copy the folder to `~/.dsh/profiles/web/plugins/dsh-chat-timeline-plus/`, set the dependency to `"file:plugins/dsh-chat-timeline-plus"`, add it to the bundles array as in option 2
+
+> Desktop users: the profile lives at `~/.dsh/profiles/desktop` — same steps.
+
+### Apply & verify
+
+1. Restart dsh (web or Desktop)
+2. Open any conversation — the timeline rail appears on the right
+3. Hover an entry ~0.35s for the Q&A card; the pin sits top-left of the expanded panel
+
+Optional check: the `__DSH_BOOT__` manifest in the served index should list `dsh-chat-timeline-plus`.
+
+### Uninstall
+
+```bash
+dsh plugin remove dsh-chat-timeline-plus
+```
+
+Or manually: remove the bundles entry, drop the dependency, reinstall, restart.
+
+### Troubleshooting
+
+- **Installed but nothing shows**: check the bundles spelling, restart dsh; inspect `plugin-management/state.json` — crashed plugins land in `disabledBundles` (clear it and restart)
+- **Local edits not taking effect**: the profile node_modules is a copy, not a link — re-copy `lib/` after changes and restart
 
 ## License
 

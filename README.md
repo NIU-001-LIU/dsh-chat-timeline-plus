@@ -36,11 +36,71 @@ DeepSeek Harness（DSH）消息时间线：右侧常驻导航轨 + 悬停展开�
 
 ## 安装
 
+### 方式一：dsh 命令（推荐）
+
 ```bash
+# 当前 profile（通常是 web）
 dsh plugin add dsh-chat-timeline-plus
+
+# 或明确指定 profile
+dsh plugin --profile web add dsh-chat-timeline-plus
 ```
 
-安装后重启 dsh web 并刷新浏览器。源码安装见 [English 文档](README.en.md)。
+该命令会自动：npm 拉包 → 写入 profile 依赖 → 注册 bundle（cordis.patch.yml）→ pnpm install。
+
+### 方式二：npm 直接安装到 profile
+
+适合不通过 dsh CLI 管理插件的用户：
+
+```bash
+cd ~/.dsh/profiles/web
+npm install dsh-chat-timeline-plus   # 或 pnpm add
+```
+
+然后编辑该目录的 `package.json`，在 `dsh.profile.bundles` 数组中加入：
+
+```jsonc
+{
+  "dsh": {
+    "profile": {
+      "bundles": [ /* …, */ "dsh-chat-timeline-plus" ]
+    }
+  }
+}
+```
+
+### 方式三：源码 / 本地路径安装
+
+```bash
+git clone https://github.com/NIU-001-LIU/dsh-chat-timeline-plus.git
+cd dsh-chat-timeline-plus
+```
+
+- **Windows**：双击 `install.bat`（自动复制到 profile 并注册）
+- **手动**：把整个目录复制到 `~/.dsh/profiles/web/plugins/dsh-chat-timeline-plus/`，依赖写 `"file:plugins/dsh-chat-timeline-plus"`，再按方式二加入 bundles 数组
+
+> Desktop 用户：profile 目录在 `~/.dsh/profiles/desktop`，步骤相同。
+
+### 生效与验证
+
+1. 重启 dsh（web 或 Desktop）
+2. 打开任意会话，右侧应出现时间线导航轨
+3. 悬停条目约 0.35 秒出现问答预览卡；展开面板左上角有图钉
+
+验证加载（可选）：浏览器访问 dsh 服务首页，页面源码 `__DSH_BOOT__` 清单里应含 `dsh-chat-timeline-plus`。
+
+### 卸载
+
+```bash
+dsh plugin remove dsh-chat-timeline-plus
+```
+
+或手动：从 bundles 数组移除条目 → 删依赖 → `pnpm install` → 重启。
+
+### 常见问题
+
+- **装了没出现**：确认 bundles 数组拼写、重启了 dsh；查 `plugin-management/state.json` 的 `disabledBundles`（崩溃插件会被自动禁用，清空后重启）
+- **本机改了源码不生效**：profile 的 node_modules 是复制不是链接，改动后需重新复制 `lib/` 并重启
 
 ## License
 
