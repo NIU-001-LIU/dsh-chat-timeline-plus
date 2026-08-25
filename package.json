@@ -1,7 +1,7 @@
 {
-  "name": "dsh-chat-timeline",
-  "version": "0.1.4",
-  "description": "DeepSeek 官网风格右侧消息时间线：常驻显示当前会话的用户消息卡片，悬停高亮、重点标记、平滑跳转与回退联动。",
+  "name": "dsh-chat-timeline-plus",
+  "version": "0.2.0",
+  "description": "DeepSeek 官网风格消息时间线（增强版 fork）：悬停问答预览、面板钉住常驻、重点标记、平滑跳转。fork of dsh-chat-timeline.",
   "keywords": [
     "deepseek",
     "harness",
@@ -11,10 +11,14 @@
     "navigation",
     "timeline",
     "bookmarks",
-    "rewind"
+    "rewind",
+    "hover-preview",
+    "pin",
+    "plus"
   ],
-  "author": "jjxjjjjiik-bot",
+  "author": "NIU-001-LIU",
   "contributors": [
+    "jjxjjjjiik-bot (dsh-chat-timeline upstream)",
     "NIU-001-LIU",
     "dwb-ajay",
     "YuYangOUC",
@@ -23,11 +27,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jjxjjjjiik-bot/dsh-chat-timeline.git"
+    "url": "git+https://github.com/NIU-001-LIU/dsh-chat-timeline-plus.git"
   },
-  "homepage": "https://github.com/jjxjjjjiik-bot/dsh-chat-timeline#readme",
+  "homepage": "https://github.com/NIU-001-LIU/dsh-chat-timeline-plus#readme",
   "bugs": {
-    "url": "https://github.com/jjxjjjjiik-bot/dsh-chat-timeline/issues"
+    "url": "https://github.com/NIU-001-LIU/dsh-chat-timeline-plus/issues"
   },
   "publishConfig": {
     "access": "public",
@@ -37,7 +41,9 @@
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
-    "./client": { "default": "./lib/client.js" },
+    "./client": {
+      "default": "./lib/client.js"
+    },
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },

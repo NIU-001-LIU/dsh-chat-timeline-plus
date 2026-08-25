@@ -1,4 +1,8 @@
-# dsh-chat-timeline
+# dsh-chat-timeline-plus
+
+> **增强版 fork**：基于 [jjxjjjjiik-bot/dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline)（MIT），感谢原作者与所有上游贡献者。
+> 本 fork 新增：**悬停问答预览**（鼠标悬停消息时浮卡显示该轮问题与回答摘要）、**面板钉住**（点击图钉常驻展开，按会话记忆）。
+
 
 [**English**](README.en.md) | 简体中文
 
