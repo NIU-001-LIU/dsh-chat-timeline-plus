@@ -1,6 +1,6 @@
 {
   "name": "dsh-chat-timeline-plus",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "DeepSeek 官网风格消息时间线（增强版 fork）：悬停问答预览、面板钉住常驻、重点标记、平滑跳转。fork of dsh-chat-timeline.",
   "keywords": [
     "deepseek",
