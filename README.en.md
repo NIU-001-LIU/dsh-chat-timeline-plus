@@ -7,7 +7,7 @@ English | [**简体中文**](README.md)
 
 A message timeline for DeepSeek Harness (DSH): persistent right rail + hover panel, **hover to preview the Q&A, pin to keep it open**.
 
-> Not affiliated with DeepSeek. Based on [dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline) (MIT).
+> Not affiliated with DeepSeek. Some features inherited from [dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline).
 
 ## Features
 

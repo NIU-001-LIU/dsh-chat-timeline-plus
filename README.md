@@ -7,7 +7,7 @@
 
 DeepSeek Harness（DSH）消息时间线：右侧常驻导航轨 + 悬停展开面板，**悬停即预览问答，一键钉住常驻**。
 
-> 非 DeepSeek 官方出品，与 DeepSeek 无任何关联。基于 [dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline)（MIT）。
+> 非 DeepSeek 官方出品。部分功能继承自 [dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline)。
 
 ## 功能
 
