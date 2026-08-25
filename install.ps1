@@ -1,5 +1,5 @@
 <#
-dsh-chat-timeline 一键安装脚本（One-click installer）
+dsh-chat-timeline-plus 一键安装脚本（One-click installer）
 【中文】自动完成全部安装步骤：复制源码 → 注册到 package.json → pnpm install → 提示重启。
 (EN) Automates the whole install: copy source -> register in package.json -> pnpm install -> restart hint.
 
@@ -15,7 +15,7 @@ $ErrorActionPreference = "Stop"
 
 # ---- 1. 定位 DSH 主目录 (locate DSH home) ----
 $DSHHome = if ($env:DSH_HOME) { $env:DSH_HOME } else { Join-Path $env:USERPROFILE ".dsh" }
-$pluginName = "dsh-chat-timeline"
+$pluginName = "dsh-chat-timeline-plus"
 $src = Split-Path -Parent $MyInvocation.MyCommand.Path
 $pluginsDir = Join-Path $DSHHome "plugins"
 $target = Join-Path $pluginsDir $pluginName
@@ -24,7 +24,7 @@ $webPkg = Join-Path $webDir "package.json"
 
 Write-Host ""
 Write-Host "========================================"
-Write-Host "  dsh-chat-timeline 一键安装"
+Write-Host "  dsh-chat-timeline-plus 一键安装"
 Write-Host "  DSH 目录: $DSHHome"
 Write-Host "========================================"
 
@@ -86,5 +86,5 @@ Write-Host "  请重启 dsh web 并刷新浏览器，"
 Write-Host "  右侧导航栏即可在任意会话中出现。"
 Write-Host ""
 Write-Host "  ⭐ 如果觉得好用，求给项目点个 Star 支持一下作者：" -ForegroundColor Yellow
-Write-Host "     https://github.com/jjxjjjjiik-bot/dsh-chat-timeline" -ForegroundColor Cyan
+Write-Host "     https://github.com/NIU-001-LIU/dsh-chat-timeline-plus" -ForegroundColor Cyan
 Write-Host "=========================================="

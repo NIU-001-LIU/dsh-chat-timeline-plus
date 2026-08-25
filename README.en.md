@@ -1,9 +1,11 @@
-# dsh-chat-timeline
+# dsh-chat-timeline-plus
+
+> **Enhanced fork** of [jjxjjjjiik-bot/dsh-chat-timeline](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline) (MIT). Adds hover Q&A preview and panel pin.
 
 English | [**简体中文**](README.md)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/dsh-chat-timeline.svg)](https://www.npmjs.com/package/dsh-chat-timeline)
+[![npm version](https://img.shields.io/npm/v/dsh-chat-timeline-plus.svg)](https://www.npmjs.com/package/dsh-chat-timeline-plus)
 [![GitHub stars](https://img.shields.io/github/stars/jjxjjjjiik-bot/dsh-chat-timeline?style=social)](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline/pulls)
 
@@ -42,13 +44,13 @@ The host half registers the `dshChatTimeline` session projection that durably en
 Run in your terminal (installs directly from npm and registers configuration):
 
 ```bash
-dsh plugin --profile web add dsh-chat-timeline
+dsh plugin --profile web add dsh-chat-timeline-plus
 ```
 
 Or:
 
 ```bash
-dsh plugin add dsh-chat-timeline
+dsh plugin add dsh-chat-timeline-plus
 ```
 
 After installation, restart `dsh web` and refresh your browser.
@@ -67,13 +69,13 @@ After installation, restart `dsh web` and refresh your browser.
 
 ### Method 3: Manual install (other platforms or local development)
 
-1. Copy the plugin to `$DSH_HOME/profiles/web/plugins/dsh-chat-timeline/` (`$DSH_HOME` is usually `~/.dsh`)
-2. Add `"dsh-chat-timeline": "file:plugins/dsh-chat-timeline"` to `profiles/web/package.json`, then run `pnpm install`
+1. Copy the plugin to `$DSH_HOME/profiles/web/plugins/dsh-chat-timeline-plus/` (`$DSH_HOME` is usually `~/.dsh`)
+2. Add `"dsh-chat-timeline-plus": "file:plugins/dsh-chat-timeline-plus"` to `profiles/web/package.json`, then run `pnpm install`
 3. Add to `profiles/web/cordis.patch.yml`:
    ```yaml
    - insert:
        - id: chat-timeline
-         name: dsh-chat-timeline
+         name: dsh-chat-timeline-plus
    ```
 4. Restart `dsh web` and refresh the browser
 

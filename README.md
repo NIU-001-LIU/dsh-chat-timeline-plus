@@ -7,7 +7,7 @@
 [**English**](README.en.md) | 简体中文
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/dsh-chat-timeline.svg)](https://www.npmjs.com/package/dsh-chat-timeline)
+[![npm version](https://img.shields.io/npm/v/dsh-chat-timeline-plus.svg)](https://www.npmjs.com/package/dsh-chat-timeline-plus)
 [![GitHub stars](https://img.shields.io/github/stars/jjxjjjjiik-bot/dsh-chat-timeline?style=social)](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jjxjjjjiik-bot/dsh-chat-timeline/pulls)
 
@@ -46,13 +46,13 @@ Host 侧通过会话投影（`dshChatTimeline`）持久化枚举所有用户消�
 在终端中执行以下命令（自动从 npm 下载并配置）：
 
 ```bash
-dsh plugin --profile web add dsh-chat-timeline
+dsh plugin --profile web add dsh-chat-timeline-plus
 ```
 
 或者：
 
 ```bash
-dsh plugin add dsh-chat-timeline
+dsh plugin add dsh-chat-timeline-plus
 ```
 
 安装完成后，重启 `dsh web` 并刷新浏览器即可。
@@ -71,13 +71,13 @@ dsh plugin add dsh-chat-timeline
 
 ### 方式三：手动安装（其他平台或本地开发）
 
-1. 将插件复制到 `$DSH_HOME/profiles/web/plugins/dsh-chat-timeline/`（`$DSH_HOME` 通常是 `~/.dsh`）
-2. 在 `profiles/web/package.json` 添加依赖 `"dsh-chat-timeline": "file:plugins/dsh-chat-timeline"`，运行 `pnpm install`
+1. 将插件复制到 `$DSH_HOME/profiles/web/plugins/dsh-chat-timeline-plus/`（`$DSH_HOME` 通常是 `~/.dsh`）
+2. 在 `profiles/web/package.json` 添加依赖 `"dsh-chat-timeline-plus": "file:plugins/dsh-chat-timeline-plus"`，运行 `pnpm install`
 3. 在 `profiles/web/cordis.patch.yml` 添加：
    ```yaml
    - insert:
        - id: chat-timeline
-         name: dsh-chat-timeline
+         name: dsh-chat-timeline-plus
    ```
 4. 重启 `dsh web` 并刷新浏览器
 
